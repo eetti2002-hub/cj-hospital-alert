@@ -5,7 +5,7 @@ import datetime
 # 보안 설정된 키 가져오기
 API_KEY = os.environ['DATA_API_KEY']
 TOKEN = os.environ['TELEGRAM_TOKEN']
-CHAT_ID = "530026639" # 텔레그램 봇과 대화 시작 후 아이디를 확인해야 하지만, 우선 기본값 설정
+CHAT_ID = "8470635650" # 텔레그램 봇과 대화 시작 후 아이디를 확인해야 하지만, 우선 기본값 설정
 
 def get_hospitals():
     url = 'http://apis.data.go.kr/B551182/hospInfoServicev2/getHospBasisList'
