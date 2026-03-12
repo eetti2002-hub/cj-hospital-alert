@@ -2,8 +2,8 @@ name: CJ Hospital Alert
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 매일 한국시간 오전 9시 실행 (UTC 0시)
-  workflow_dispatch: # 수동으로 실행해볼 수 있는 버튼을 만들어줍니다.
+    - cron: '0 0 * * *' # 매일 한국시간 오전 9시 실행
+  workflow_dispatch: # 직접 실행 버튼 생성
 
 jobs:
   run_bot:
@@ -20,7 +20,7 @@ jobs:
         run: pip install requests
 
       - name: Run Script
-        run: python hospital.py  # 에러가 났던 'eval'을 'run'으로 고쳤습니다!
+        run: python hospital.py
         env:
           DATA_API_KEY: ${{ secrets.DATA_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
