@@ -5,7 +5,7 @@ import datetime
 # 보안 설정값
 API_KEY = os.environ.get('DATA_API_KEY')
 TOKEN = os.environ.get('TELEGRAM_TOKEN')
-CHAT_ID = "530026639" # 아까 성공하신 본인의 숫자 ID로 꼭 확인해 주세요!
+CHAT_ID = "8470635650" # 아까 성공하신 본인의 숫자 ID로 꼭 확인해 주세요!
 
 def get_hospital_update():
     # 1. 공공데이터 API 주소 (병원 목록)
