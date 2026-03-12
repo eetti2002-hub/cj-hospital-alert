@@ -1,22 +1,26 @@
 name: CJ Hospital Alert
+
 on:
   schedule:
-    - cron: '0 0 * * *' # 매일 한국시간 오전 9시 (UTC 0시)
-  workflow_dispatch: # 수동으로 실행해볼 수 있는 버튼 생성
+    - cron: '0 0 * * *' # 매일 한국시간 오전 9시 실행 (UTC 0시)
+  workflow_dispatch: # 수동으로 실행해볼 수 있는 버튼을 만들어줍니다.
 
 jobs:
   run_bot:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+
       - name: Install dependencies
         run: pip install requests
+
       - name: Run Script
-        run: python hospital.py
+        run: python hospital.py  # 에러가 났던 'eval'을 'run'으로 고쳤습니다!
         env:
           DATA_API_KEY: ${{ secrets.DATA_API_KEY }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
